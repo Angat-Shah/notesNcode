@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORCHE</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="acc.css">
+<body>
+    <img src="../images/pattern.svg" class="bg">
+    <div class="main">
+        <div class="header">
+            <div class="logo">
+                <img src="../images/logo-transparent-svg.svg" alt="logo">
+            </div>
+            <h1 class="cname">FORCHE</h1>
+            <div class="nav">
+                <div class="ico" onclick="hamburgerMenu()">
+                    <img src="../images/hamburger-menu-icon.svg" alt="" srcset=""></div>
+                <div id="navh" class="navh">
+                    <li><h2><a href="">Home</a></h2></li><br>
+                    <li><h2><a href="">About</a></h2></li><Br>
+                    <li><h2><a href="">Contact</a></h2></li><Br>
+                </div>
+            </div>
+        </div>
+        <div id="bgb" class="bgb"></div>
+        <div id="login" class="login">
+            <h1>Log In</h1>
+            <form>
+                <label>Username</label>
+                <input type="text" id="usernamel" placeholder="Enter your Username" name="username" ><br>
+                <label>Password</label>
+                <input type="password" id="passl" placeholder="Enter Password" name="password" ><br>
+                <input type="submit" onclick="validateIsNotEmpty()" value="Log In">
+            </form>
+        </div>
+        <div id="cret" class="cret">
+            <h1>Create An Account</h1>
+            <form>
+                <label>Username</label>
+                <input type="text" id="userc" placeholder="Enter your Username" name="username" ><br>
+                <label>Password</label>
+                <input type="password" id="passc" placeholder="Enter Password" name="password" ><br>
+                <label>Verify Password</label>
+                <input type="password" id="vpassc" placeholder="Enter Password again" name="password" ><br>
+                <input type="submit" onclick="save()" value="Register">
+            </form>
+        </div>
+        <div class="content">
+            <div class="cl"><h1>Already Have An Account? <span class="lo">Login</span></h1></div>
+            <div class="cr"><h1>Dont Have An Account? <span class="create">Create An Account</span></h1></div>
+        </div>
+        <div class="footer">
+            <p>Forche &copy; 2023</p>
+        </div>
+    </div>
+</body>
+<script src="../jquery.js"></script>
+<script src="acc.js"></script>
+</html>

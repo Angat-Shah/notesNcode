@@ -1,0 +1,79 @@
+<!--Enrollment No: 202203103510097
+   Name: Angat Shah
+   Branch: B.Tech Computer Science and Engineering-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>practical21</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap);
+        input
+        {
+            border-radius: 18px;
+            border: 0.2px solid black;
+        } 
+        .sub
+        {
+            padding: 9px; 
+            border-radius: 8px;  
+        }
+        .sub:hover
+        {
+            color: white;
+            background: black;
+        }
+    </style>
+</head>
+<body style="font-family: 'Poppins',sans-serif;"><center>
+    <h1>LIBRARY BOOK LOAN FORM USING JQUERY</h1>
+    <form id="my_form">
+        <label>MEMBER NAME</label>
+        <input type="text" id="memberName" name="memberName"><br><br>
+        <label>BOOK TITLE</label>
+        <input type="text" id="bookTitle" name="bookTitle"><br><br> 
+        <label>ISSUE DATE</label>
+        <input type="date" id="issueDate" name="issueDate"><br><br>
+        <input type="submit" class="sub" value="Submit">
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize the jQuery Validate plugin
+            $("#my_form").validate({
+                rules: {    
+                        bookTitle: {
+                        required: true
+                    },
+                    memberName: {
+                        required: true
+                    },
+                    issueDate: {
+                        required: true,
+                        date: true
+                    }
+                },
+                messages: {
+                    bookTitle: {
+                        required: " --> Enter a Book Title."
+                    },
+                    memberName: {
+                        required: " --> Enter a Member Name."
+                    },
+                    issueDate: {
+                        required: " --> Enter an Issue Date.",
+                        date: " --> Enter a valid date."
+                    }
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                    onclick(alert('Form Submitted Successfully'))
+                }
+            });
+        });
+    </script></center>
+</body>
+</html>

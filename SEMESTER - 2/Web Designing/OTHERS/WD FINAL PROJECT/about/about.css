@@ -1,0 +1,50 @@
+@font-face {
+    font-family: n;
+    src: url('../fonts/FontsFree-Net-1e771d57-771a-47ed-8d80-666e2b9f800d.ttf');
+}
+
+.f{
+    height: 100svh;
+    width: 100svw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:#000;
+}
+
+.title{
+    width: min(85%, 2000px);
+    height: 70svh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.top{
+    font-size: 5rem;
+    font-family: n;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+    margin-left: 10svw;
+}
+
+.middle{
+    font-size: 5rem;
+    font-family: n;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+}
+
+.lower{
+    font-size: 5rem;
+    font-family: n;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+    margin-left: 20svw;
+}
+
+.mar{
+    margin: 20svh 5svw 0 5svw;
+}

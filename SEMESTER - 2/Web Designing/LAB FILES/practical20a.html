@@ -1,0 +1,34 @@
+<!--Enrollment No: 202203103510097
+   Name: Angat Shah
+   Branch: B.Tech Computer Science and Engineering-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>practical20a </title>
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap);
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body style="font-family: 'Poppins',sans-serif;"><center>
+    <fieldset style="width: calc(100% - 800px);">
+        <legend align="center"  style=" padding: 5px 10px; background-color: black;color: white;">LARGEST NUMBER USING JQUERY</legend><br><br>
+        FIRST NUMBER: <input type="text" id="a" placeholder="Enter First number"><br><br>
+        SECOND NUMBER: <input type="text" id="b" placeholder="Enter Second number"><br><br>
+        THIRD NUMBER: <input type="text" id="c" placeholder="Enter Third number"><br><br>
+            <input id="trig" type="submit" value="Calculate"></fieldset></center>
+    <script>
+        $("#trig").click(function()
+        {
+            var num1=parseInt($("#a:text").val());
+            var num2=parseInt($("#b:text").val());
+            var num3=parseInt($("#c:text").val());
+            large=num1;
+            if(large<num2)large=num2;
+            if(large<num3)large=num3;
+            alert("LARGEST NUMBER  --> " + large);
+        });
+    </script>
+</body>
+</html>

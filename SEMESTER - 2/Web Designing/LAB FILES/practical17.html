@@ -1,0 +1,52 @@
+<!--Enrollment No: 202203103510097
+   Name: Angat Shah
+   Branch: B.Tech Computer Science and Engineering-->
+   
+<!DOCTYPE html>
+<html>
+<head>
+   <title>practical17</title>
+   <style>
+       h1
+       {
+           color: chartreuse;
+           text-shadow: 0 0 15px yellow;
+       }
+       button
+       {    
+           color: black;
+           background: yellow;
+           font-weight: 500;
+           padding-left: 3%;
+           padding-top: 1%;
+           padding-right: 3%;
+           padding-bottom: 1%;
+           border: 2px solid chartreuse;
+           cursor: pointer;
+           border-radius: 20px;
+       }
+       button:hover
+       {
+           background: white;
+       }
+   </style>
+   <script>
+       function add_image()
+       {
+           var img = document.createElement("img");
+           document.getElementById("image1").appendChild(img);
+           img.src = "https://images6.alphacoders.com/126/thumbbig-1261894.webp";
+       }
+       function remove_image()
+       {
+           document.getElementById("image1").remove ();
+       }
+   </script>
+</head>
+<body style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><center>
+   <h1>NATURE</h1>
+   <button onclick="add_image()">ADD IMAGE</button>
+   <button onclick="remove_image()">REMOVE IMAGE</button><br><br>
+   <div id="image1" style="height: 200px;"></div>
+</body></center>
+</html>
