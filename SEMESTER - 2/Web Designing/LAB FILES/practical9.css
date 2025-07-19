@@ -1,0 +1,53 @@
+ /*  Enrollment No: 202203103510097
+   Name: Angat Shah
+   Branch: B.Tech Computer Science and Engineering*/
+h1
+{
+   font-family: 'Trebuchet MS';
+}
+.watch
+{
+   position: absolute;
+   top : 24%;
+   left: 15.5%;
+   border: 10px groove;
+   border-color: #B18467;
+   padding: 2%;
+}
+#line1
+{
+   position: absolute;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: #9D0000;
+   top: 22%;
+   left: 42%;
+   font-size: 25px;
+   font-weight: lighter;
+}
+#line2
+{
+   position: absolute;
+   font-family: 'Courier New', Courier, monospace;
+   top: 28%;
+   left: 42%;
+   opacity: 40%;
+}
+.button
+{
+   background-color: white;
+   border: 1px solid black;
+   padding: 3px;
+   padding-top: 2%;
+   padding-right: 18.8%;
+   padding-bottom: 2%;
+   padding-left: 18.8%;
+   text-align: center;
+   font-size: 20px;
+   cursor: pointer;
+   border-radius: 8px;
+}
+.button:hover
+{
+   background-color: #9D0000;
+   color: white ;
+}

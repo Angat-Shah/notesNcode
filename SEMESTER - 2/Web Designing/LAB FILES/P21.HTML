@@ -1,0 +1,105 @@
+<!--Enrollment No: 202203103510097
+   Name: Angat Shah
+   Branch: B.Tech Computer Science and Engineering-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Issue Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <style>
+.sub
+{
+    margin-top:2%;
+    margin-left:2%;
+    border:5px ridge black;
+    border-radius:4px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+    #bookTitle{
+    border:1px dotted black;
+    border-radius:4px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #memberName{
+  border:1px dotted black;
+  border-radius:4px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:5px;
+  padding-bottom:5px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #issueDate{
+  border:1px dotted black;
+  border-radius:4px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:5px;
+  padding-bottom:5px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    </style>
+</head>
+<body><center>
+    <form id="bookIssueForm">
+        <label for="bookTitle">BOOK TITLE:</label>
+        <input type="text" id="bookTitle" name="bookTitle" />
+        <br /><br>  
+        <label for="memberName">MEMBER NAME:</label>
+        <input type="text" id="memberName" name="memberName" />
+        <br /><br>
+        <label for="issueDate">ISSUE DATE:</label>
+        <input type="date" id="issueDate" name="issueDate" />
+        <br />
+        <input type="submit" class="sub" value="Submit" />
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize the jQuery Validate plugin
+            $("#bookIssueForm").validate({
+                rules: {
+                    bookTitle: {
+                        required: true
+                    },
+                    memberName: {
+                        required: true
+                    },
+                    issueDate: {
+                        required: true,
+                        date: true
+                    }
+                },
+                messages: {
+                    bookTitle: {
+                        required: "Please enter a book title."
+                    },
+                    memberName: {
+                        required: "Please enter a member name."
+                    },
+                    issueDate: {
+                        required: "Please enter an issue date.",
+                        date: "Please enter a valid date."
+                    }
+                },
+                submitHandler: function(form) {
+                    // Submit the form if it's valid
+                    form.submit();
+                    onclick(alert('Form Submitted Successfully'))
+                }
+            });
+        });
+    </script></center>
+</body>
+</html>

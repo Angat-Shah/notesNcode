@@ -1,0 +1,80 @@
+<!--Enrollment No: 202203103510097
+ Name: Angat Shah
+ Branch: B.Tech Computer Science and Engineering-->
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>practical11</title>
+   <style>
+       h1
+       {
+           color: plum;
+           text-shadow: 1px 1px 2px yellow, 0 0 25px pink, 0 0 15px yellow;
+       }
+       .gradient
+       {
+           height: 200px;
+           background: linear-gradient(to right,pink,yellow,lightgreen,cyan);
+       }
+       p
+       {
+           writing-mode: vertical-rl;
+           position: absolute;
+           left:48.5%;
+           color: blueviolet;
+           opacity: 40%;
+       }
+       .animation
+       {
+           animation-name: box;
+           height: 30px;
+           width:300px;
+           position: relative;
+           animation-duration: 5s;
+           animation-iteration-count: infinite;
+           animation-direction: normal;
+           animation-timing-function: alternate;
+           font-family:cursive;
+       }
+       @keyframes box
+       {
+           0% {background-color: cyan; left: 0px; top: 0px;}
+           33.33% {background-color: lightgreen; left: calc(100% - 300px); top:calc(100% - 30px);}
+           66.66% {background-color: yellow; left: calc(100% - 300px); top: 0px;}
+           80% {background-color:pink; left: 0px; top:calc(100% - 30px)}
+           100% {background-color: pink,yellow,lightgreen,cyan; left: 0px; top: 0px;}
+       }
+       .b
+       {
+           height: 50px;
+           width: 200px;
+           color: violet;
+           background: linear-gradient(to right,pink,yellow,lightgreen,cyan);
+           border-radius: 12px;
+           cursor: pointer;
+           box-shadow: 1px 1px 2px yellow,0 0 25px pink, 0 0 15px yellow;
+       }
+       .b:hover
+       {
+           animation: hide;
+           animation-duration: 2s;
+       }
+       @keyframes hide
+       {
+          0%{opacity:0;}
+          25%{opacity:0.25;}
+          50%{opacity:0.5;}
+          75%{opacity:0.75;}
+          100%{opacity:1;}
+       }
+   </style>
+ </head>
+ <body>
+   <center><h1>~ ANIMATION ~</h1></center>
+   <div class="gradient">
+       <p>$$$$$$$$$$$$$$$$$$$$</p>
+       <div class="animation" align="center">Catch Me!</div>
+   </div><br><br>
+   <center><button class="b" onclick="alert('GET OUT')">Click Here!</button></center>
+ </body>
+ </html> 

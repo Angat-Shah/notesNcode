@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800;900&display=swap');
+        :root
+        {
+            --main-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --lighter-color: #e0e0e7;
+            --light-color: #b0b0c0;
+            --dark-color: #52505e;
+
+            --font-smaller: 14px;
+            --font-bigger: 20px;
+        }
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        *,::before,::after
+        {
+            box-sizing: border-box;
+        }
+        html
+        {
+            scroll-behavior: smooth;
+        }
+        body
+        {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.8;
+            color: var(--dark-color);
+        }
+        a
+        {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul
+        {
+            list-style: none;
+        }
+        h1,h2,h3
+        {
+            font-weight: 700;
+            line-height: 1.25;
+            margin: 0 0 0.5em;
+        }
+        .container
+        {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2em;
+        }
+        .form-box
+        {
+            display: flex;
+            flex-direction: column;
+            margin-top: 5em;
+            border: 8px solid var(--lighter-color);
+            border-radius: 15px;
+            background-color: #faf9ff;
+        }
+
+        /* -->> PROGRESS */
+        .form-box .progress
+        {
+            position: relative;
+            padding: 1em;
+        }
+        .logo
+        {
+            font-size: 1.75em;
+            font-weight: 800;
+            color: var(--dark-color);
+            padding: 40px 48px;
+            text-align: center;
+        }
+        .logo span
+        {
+            color: var(--main-color);
+        }
+
+        /* -->> PROGRESS STEPS */
+        .progress ul.progress-steps
+        {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 2em;
+        }
+        .progress ul.progress-steps li
+        {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 2em;
+        }
+        .progress ul.progress-steps li > span
+        {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            font-size: var(--font-smaller);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1em;
+            border-radius: 50%;
+            background-color: var(--lighter-color);
+            z-index: 1;
+            
+        }
+        .wrapper
+        {
+            top: 0;
+            margin: 0;
+            padding: 0;
+            margin-top: 0;
+            background: transparent;
+        }
+        .progress ul.progress-steps li.active > span
+        {
+            color: white;
+            background-color: var(--main-color);
+            border: 4px solid var(--secondary-color);
+            z-index: 1;
+        }
+        .progress ul.progress-steps li p span
+        {
+            font-size: var(--font-smaller);
+            color: var(--light-color);
+            display: none;
+        }
+        .progress ul li p
+        {
+            position: absolute;
+            top: -2rem;
+            font-size: 12px;
+        }
+        
+        /* -->> FORM */
+        .form-box form
+        {
+            width: 100%;
+            padding: 3em 1em;
+            background-color: white;
+            border-radius: 30px 30px 15px 15px;
+        }
+        form > div
+        {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        form > div p
+        {
+            color: var(--light-color);
+            margin-bottom: 2em
+        }
+        form > div > div:not(.checkbox)
+        {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2em;
+        }
+        form :where(input,select)
+        {
+            height: 40px;
+            padding: 0 1em;
+            border-radius: 7px;
+            outline-color: var(--secondary-color);
+            border: 1px solid var(--lighter-color);
+            background-color: transparent;
+        }
+        form label
+        {
+            font-size: var(--font-smaller);
+            margin-bottom: 0.5em;
+            font-weight: 600;
+        }
+        form .grouping
+        {
+            display: flex;
+        }
+        form .grouping input
+        {
+            max-width: 70px;
+            text-align: center;
+            margin-right: 1em;
+        }
+        form .checkbox input
+        {
+            height: auto;
+        }
+        form > div:not(.btn-group)
+        {
+            display: none;
+            -webkit-animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+            animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+        }
+        @keyframes fadeIn
+        {
+            0%
+            {
+                opacity: 0;
+                -webkit-transform: translateY(10%);
+                transform: translateY(10%);
+            }
+            100%
+            {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+        }
+        form > div.active
+        {
+            display: block;
+        }
+        form > div .bg-svg
+        {
+            width: 50px;
+            height: 50px;
+        }
+        form > .form-one .bg-svg
+        {
+            background: url(Personal.svg);
+        }
+        form > .form-two .bg-svg
+        {
+            background: url(Contact.svg);
+        }
+        form > .form-three .bg-svg
+        {
+            background: url(Security.svg);
+        }
+
+        /* -->> BUTTON */
+        .btn-group
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            margin-top: 2em;
+        }
+        .btn-group [class*="btn-"]
+        {
+            background-color: var(--main-color);
+            color: white;
+            padding: 1em 2.5em;
+            border: 4px solid var(--secondary-color);
+            border-radius: 30px;
+            cursor: pointer;
+            -webkit-transition: background-color .3s, border-color .3s ease-out;
+            transition: background-color .3s, border-color .3s ease-out;
+        }
+        .btn-group [class*="btn-"]:disabled
+        {
+            background-color: var(--light-color);
+            border-color: var(--light-color);
+            cursor: text;
+        }
+        .btn-group [class*="btn-"]:hover:not(:disabled)
+        {
+            background-color: var(--dark-color);
+            border-color: var(--light-color);
+        }
+        .btn-group .btn-submit,
+        .form-three.active ~ .btn-group .btn-next
+        {
+            display: none;
+        }
+        .form-three.active ~ .btn-group .btn-submit
+        {
+            display: block;
+        }
+        .form-three.active ~ .btn-group
+        {
+            justify-content: space-between;
+        } 
+
+        ::placeholder
+        {
+            color: var(--light-color);
+        }
+
+
+        @media screen and (min-width: 768px)
+        {
+            .form-box
+            {
+                flex-direction: row;
+            }
+            .form-box .progress
+            {
+                flex: 1 0 35%;
+                min-width: 300px;
+                padding: 3em;
+            }
+            .logo
+            {
+                margin: -48px -48px 48px;
+            }
+            .progress ul.progress-steps
+            {
+                flex-direction: column;
+                gap: 0;
+            }
+            .progress ul.progress-steps li:not(:last-child)::before
+            {
+                content: '';
+                position: absolute;
+                left: 18.5px;
+                top: 30px;
+                width: 2px;
+                height: 65px;
+                background-color: var(--lighter-color);
+            }
+            .form-box form
+            {
+                padding: 3em;
+                border-radius: 0 15px 15px 0;
+            }
+            .progress ul li p
+            {
+                position: relative;
+                top: auto;
+                font-size: inherit;
+            }
+            .progress ul.progress-steps li p span
+            {
+                display: block;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div id="page" class="site">
+        <div class="cotainer">
+            <div class="form-box">
+                <div class="progress">
+                    <div class="logo"><a href="/"><span>.web</span>design</a></div>
+                    <ul class="progress-steps">
+                        <li class="step active">
+                            <span>1</span>
+                            <p>Personal<br><span>25 secs to complete</span></p>
+                        </li>
+                        <li class="step">
+                            <span>2</span>
+                            <p>Contact<br><span>25 secs to complete</span></p>
+                        </li>
+                        <li class="step">
+                            <span>3</span>
+                            <p>Security<br><span>25 secs to complete</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <form action="">
+                    <div class="form-one form-step active">
+                        <div class="bg-svg"></div>
+                        <h2>Personal Information</h2>
+                        <p>Enter your personal information correctly</p>
+                        <div>
+                            <label>First Name</label>
+                            <input type="text" placeholder="e.g. JOHN">
+                        </div>
+                        <div>
+                            <label>Last Name</label>
+                            <input type="text" placeholder="e.g. WICK">
+                        </div>
+                        <div class="birth">
+                            <label>Date of Birth</label>
+                            <div class="grouping">
+                                <input type="text" pattern="[0-9]" name="day" value="" min="0" max="31" placeholder="DD">
+                                <input type="text" pattern="[0-9]" name="month" value="" min="0" max="12" placeholder="MM">
+                                <input type="text" pattern="[0-9]" name="year" value="" min="0" max="2023" placeholder="YYYY">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-two form-step">
+                        <div class="bg-svg"></div>
+                        <h2>Contact</h2>
+                        <div>
+                            <label>Phone</label>
+                            <input type="tel" placeholder="+91xxxxxx">
+                        </div>
+                        <div>
+                            <label>Address</label>
+                            <input type="text" placeholder="Street Address">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="App, Suite, Building">
+                        </div>
+                        <div>
+                            <label>City</label>
+                            <input type="text" placeholder="City">
+                        </div>
+                        <div>
+                            <label>State</label>
+                            <input type="text" placeholder="State/Province">
+                        </div>
+                        <div>
+                            <label>Zip Code</label>
+                            <input type="text" placeholder="Postal/Zip Code">
+                        </div>
+                        <div>
+                            <label>Country</label>
+                            <select name="country" id="country">
+                                <option value="">Select</option>
+                                <option value="Afghanistan">Afghanistan</option>
+                                <option value="Åland Islands">Åland Islands</option>
+                                <option value="Albania">Albania</option>
+                                <option value="Algeria">Algeria</option>
+                                <option value="American Samoa">American Samoa</option>
+                                <option value="Andorra">Andorra</option>
+                                <option value="Angola">Angola</option>
+                                <option value="Anguilla">Anguilla</option>
+                                <option value="Antarctica">Antarctica</option>
+                                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Armenia">Armenia</option>
+                                <option value="Aruba">Aruba</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Austria">Austria</option>
+                                <option value="Azerbaijan">Azerbaijan</option>
+                                <option value="Bahamas">Bahamas</option>
+                                <option value="Bahrain">Bahrain</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Barbados">Barbados</option>
+                                <option value="Belarus">Belarus</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Belize">Belize</option>
+                                <option value="Benin">Benin</option>
+                                <option value="Bermuda">Bermuda</option>
+                                <option value="Bhutan">Bhutan</option>
+                                <option value="Bolivia">Bolivia</option>
+                                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                <option value="Botswana">Botswana</option>
+                                <option value="Bouvet Island">Bouvet Island</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                <option value="Bulgaria">Bulgaria</option>
+                                <option value="Burkina Faso">Burkina Faso</option>
+                                <option value="Burundi">Burundi</option>
+                                <option value="Cambodia">Cambodia</option>
+                                <option value="Cameroon">Cameroon</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Cape Verde">Cape Verde</option>
+                                <option value="Cayman Islands">Cayman Islands</option>
+                                <option value="Central African Republic">Central African Republic</option>
+                                <option value="Chad">Chad</option>
+                                <option value="Chile">Chile</option>
+                                <option value="China">China</option>
+                                <option value="Christmas Island">Christmas Island</option>
+                                <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Comoros">Comoros</option>
+                                <option value="Congo">Congo</option>
+                                <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                                <option value="Cook Islands">Cook Islands</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="Cote D'ivoire">Cote D'ivoire</option>
+                                <option value="Croatia">Croatia</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Cyprus">Cyprus</option>
+                                <option value="Czech Republic">Czech Republic</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="Djibouti">Djibouti</option>
+                                <option value="Dominica">Dominica</option>
+                                <option value="Dominican Republic">Dominican Republic</option>
+                                <option value="Ecuador">Ecuador</option>
+                                <option value="Egypt">Egypt</option>
+                                <option value="El Salvador">El Salvador</option>
+                                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                <option value="Eritrea">Eritrea</option>
+                                <option value="Estonia">Estonia</option>
+                                <option value="Ethiopia">Ethiopia</option>
+                                <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                                <option value="Faroe Islands">Faroe Islands</option>
+                                <option value="Fiji">Fiji</option>
+                                <option value="Finland">Finland</option>
+                                <option value="France">France</option>
+                                <option value="French Guiana">French Guiana</option>
+                                <option value="French Polynesia">French Polynesia</option>
+                                <option value="French Southern Territories">French Southern Territories</option>
+                                <option value="Gabon">Gabon</option>
+                                <option value="Gambia">Gambia</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Ghana">Ghana</option>
+                                <option value="Gibraltar">Gibraltar</option>
+                                <option value="Greece">Greece</option>
+                                <option value="Greenland">Greenland</option>
+                                <option value="Grenada">Grenada</option>
+                                <option value="Guadeloupe">Guadeloupe</option>
+                                <option value="Guam">Guam</option>
+                                <option value="Guatemala">Guatemala</option>
+                                <option value="Guernsey">Guernsey</option>
+                                <option value="Guinea">Guinea</option>
+                                <option value="Guinea-bissau">Guinea-bissau</option>
+                                <option value="Guyana">Guyana</option>
+                                <option value="Haiti">Haiti</option>
+                                <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                                <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                                <option value="Honduras">Honduras</option>
+                                <option value="Hong Kong">Hong Kong</option>
+                                <option value="Hungary">Hungary</option>
+                                <option value="Iceland">Iceland</option>
+                                <option value="India">India</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                                <option value="Iraq">Iraq</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="Isle of Man">Isle of Man</option>
+                                <option value="Israel">Israel</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Jamaica">Jamaica</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Jersey">Jersey</option>
+                                <option value="Jordan">Jordan</option>
+                                <option value="Kazakhstan">Kazakhstan</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Kiribati">Kiribati</option>
+                                <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                                <option value="Korea, Republic of">Korea, Republic of</option>
+                                <option value="Kuwait">Kuwait</option>
+                                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                                <option value="Latvia">Latvia</option>
+                                <option value="Lebanon">Lebanon</option>
+                                <option value="Lesotho">Lesotho</option>
+                                <option value="Liberia">Liberia</option>
+                                <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                                <option value="Liechtenstein">Liechtenstein</option>
+                                <option value="Lithuania">Lithuania</option>
+                                <option value="Luxembourg">Luxembourg</option>
+                                <option value="Macao">Macao</option>
+                                <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                                <option value="Madagascar">Madagascar</option>
+                                <option value="Malawi">Malawi</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Maldives">Maldives</option>
+                                <option value="Mali">Mali</option>
+                                <option value="Malta">Malta</option>
+                                <option value="Marshall Islands">Marshall Islands</option>
+                                <option value="Martinique">Martinique</option>
+                                <option value="Mauritania">Mauritania</option>
+                                <option value="Mauritius">Mauritius</option>
+                                <option value="Mayotte">Mayotte</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                                <option value="Moldova, Republic of">Moldova, Republic of</option>
+                                <option value="Monaco">Monaco</option>
+                                <option value="Mongolia">Mongolia</option>
+                                <option value="Montenegro">Montenegro</option>
+                                <option value="Montserrat">Montserrat</option>
+                                <option value="Morocco">Morocco</option>
+                                <option value="Mozambique">Mozambique</option>
+                                <option value="Myanmar">Myanmar</option>
+                                <option value="Namibia">Namibia</option>
+                                <option value="Nauru">Nauru</option>
+                                <option value="Nepal">Nepal</option>
+                                <option value="Netherlands">Netherlands</option>
+                                <option value="Netherlands Antilles">Netherlands Antilles</option>
+                                <option value="New Caledonia">New Caledonia</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="Nicaragua">Nicaragua</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Niue">Niue</option>
+                                <option value="Norfolk Island">Norfolk Island</option>
+                                <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                <option value="Norway">Norway</option>
+                                <option value="Oman">Oman</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Palau">Palau</option>
+                                <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                                <option value="Panama">Panama</option>
+                                <option value="Papua New Guinea">Papua New Guinea</option>
+                                <option value="Paraguay">Paraguay</option>
+                                <option value="Peru">Peru</option>
+                                <option value="Philippines">Philippines</option>
+                                <option value="Pitcairn">Pitcairn</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Puerto Rico">Puerto Rico</option>
+                                <option value="Qatar">Qatar</option>
+                                <option value="Reunion">Reunion</option>
+                                <option value="Romania">Romania</option>
+                                <option value="Russian Federation">Russian Federation</option>
+                                <option value="Rwanda">Rwanda</option>
+                                <option value="Saint Helena">Saint Helena</option>
+                                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                <option value="Saint Lucia">Saint Lucia</option>
+                                <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                                <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                                <option value="Samoa">Samoa</option>
+                                <option value="San Marino">San Marino</option>
+                                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="Senegal">Senegal</option>
+                                <option value="Serbia">Serbia</option>
+                                <option value="Seychelles">Seychelles</option>
+                                <option value="Sierra Leone">Sierra Leone</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Slovakia">Slovakia</option>
+                                <option value="Slovenia">Slovenia</option>
+                                <option value="Solomon Islands">Solomon Islands</option>
+                                <option value="Somalia">Somalia</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Sri Lanka">Sri Lanka</option>
+                                <option value="Sudan">Sudan</option>
+                                <option value="Suriname">Suriname</option>
+                                <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                                <option value="Swaziland">Swaziland</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="Switzerland">Switzerland</option>
+                                <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                                <option value="Taiwan">Taiwan</option>
+                                <option value="Tajikistan">Tajikistan</option>
+                                <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="Timor-leste">Timor-leste</option>
+                                <option value="Togo">Togo</option>
+                                <option value="Tokelau">Tokelau</option>
+                                <option value="Tonga">Tonga</option>
+                                <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                <option value="Tunisia">Tunisia</option>
+                                <option value="Turkey">Turkey</option>
+                                <option value="Turkmenistan">Turkmenistan</option>
+                                <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                                <option value="Tuvalu">Tuvalu</option>
+                                <option value="Uganda">Uganda</option>
+                                <option value="Ukraine">Ukraine</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="United States">United States</option>
+                                <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                <option value="Uruguay">Uruguay</option>
+                                <option value="Uzbekistan">Uzbekistan</option>
+                                <option value="Vanuatu">Vanuatu</option>
+                                <option value="Venezuela">Venezuela</option>
+                                <option value="Viet Nam">Viet Nam</option>
+                                <option value="Virgin Islands, British">Virgin Islands, British</option>
+                                <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                                <option value="Wallis and Futuna">Wallis and Futuna</option>
+                                <option value="Western Sahara">Western Sahara</option>
+                                <option value="Yemen">Yemen</option>
+                                <option value="Zambia">Zambia</option>
+                                <option value="Zimbabwe">Zimbabwe</option>
+                            </select>
+                        </div>
+                    </div>
+                        <div class="form-three form-step">
+                            <div class="bg-svg"></div>
+                            <h2>Security</h2>
+                            <div>
+                                <label>Email</label>
+                                <input type="email" placeholder="Your email Address">
+                            </div>
+                            <div>
+                                <label>Username</label>
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div>
+                                <label>Password</label>
+                                <input type="password" placeholder="Password">
+                            </div>
+                            <div>
+                                <input type="password" placeholder="Confirm Password">
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox">
+                                <label>Receive our news letter and special offers</label>
+                            </div>
+                        </div> 
+                    <div class="btn-group">
+                        <button type="button" class="btn-prev" disabled>Back</button>
+                        <button type="button" class="btn-next">Next step</button>
+                        <button type="button" class="btn-submit">Submit</button>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const nextButton = document.querySelector('.btn-next');
+        const prevButton = document.querySelector('.btn-prev');
+        const steps = document.querySelectorAll('.step');
+        const form_steps = document.querySelectorAll('.form-step');
+        let active = 1;
+
+        nextButton.addEventListener('click', () => {
+            active++;
+            if(active > steps.length)
+            {
+                active = steps.length;
+            }
+            updateProgress();
+        })
+
+        prevButton.addEventListener('click', () => {
+            active--;
+            if(active < 1)
+            {
+                active = 1;
+            }
+            updateProgress();
+        })
+
+        const updateProgress = () => {
+            console.log('steps.length => ' + steps.length);
+            console.log('active => ' + active);
+            
+            //toggle .active class for each list item
+            steps.forEach((step, i) => {
+                if(i == (active-1)) {
+                    step.classList.add('active');
+                    form_steps[i].classList.add('active');
+                    console.log('i => ' + i);
+                }
+                else 
+                {
+                    step.classList.remove('active');
+                    form_steps[i].classList.remove('active');
+                }
+            });
+
+            //enable or disable prev and next buttons
+            if(active === 1)
+            {
+                prevButton.disabled = true;
+            }
+            else if(active === steps.length)
+            {
+                nextButton.disabled = true;
+            }
+            else
+            {
+                prevButton.disabled = false;
+                nextButton.disabled = false;
+            }
+        }
+        
+    </script>
+</body>
+</html>

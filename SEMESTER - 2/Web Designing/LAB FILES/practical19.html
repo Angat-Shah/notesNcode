@@ -1,0 +1,38 @@
+    <!--Enrollment No: 202203103510097
+    Name: Angat Shah
+    Branch: B.Tech Computer Science and Engineering-->
+    
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>practical19</title>
+        <style>
+            @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap);
+        </style>
+    </head>
+    <body style="font-family: 'Poppins',sans-serif;"><center>
+        <h2>JQuery</h2>
+        <label>USERNAME</label>
+            <input type="text" id="username" value="Enter Username" /><br><br>
+            <button id="btn_submit">Submit</button><br><br>
+            <div id="result"></div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+            <script>
+                $(document).ready(function() {
+            
+                $("#username").click(function() {
+                $(this).val("");
+                });
+            
+                $("#btn_submit").click(function(){
+                var value = $("#username").val();
+                $("#result").text("Your Entered Response: " + value);
+            
+                $("#username").val("");
+                });
+            
+                });
+            </script>
+    </body></center>
+    </html>

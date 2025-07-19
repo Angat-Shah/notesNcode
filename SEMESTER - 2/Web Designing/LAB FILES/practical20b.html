@@ -1,0 +1,27 @@
+<!--Enrollment No: 202203103510097
+   Name: Angat Shah
+   Branch: B.Tech Computer Science and Engineering-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>practical20b</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap);
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body style="font-family: 'Poppins',sans-serif;"><center>
+    <fieldset style="width: calc(100% - 800px);">
+        <legend align="center" style=" padding: 5px 10px; background-color: black;color: white;">JQuery</legend><br>
+    Click Here to Get Today's Date
+    <button id="get">Get date</button>
+    <h1></h1></center></fieldset>
+    <script>
+        $("#get").click(function(){
+            var date = new Date();
+           $("h1").html(date.getDate()+"/"+(date.getMonth()+1)+"/"+(date.getFullYear()))
+        });
+</script>
+</body>
+</html>

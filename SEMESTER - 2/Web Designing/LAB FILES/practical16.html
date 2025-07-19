@@ -1,0 +1,55 @@
+<!--Enrollment No: 202203103510097
+  Name: Angat Shah
+  Branch: B.Tech Computer Science and Engineering-->
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>practical16</title>
+   <script>
+       function validation()
+       {
+           let a = document.forms["my_form"]["name"].value;
+           if(a == "")
+           {
+               alert("Enter The Name");
+               return false;
+           }
+        }
+   </script>
+</head><center>
+<body style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+<fieldset style="width:calc(100% - 600px);">
+   <legend align="center" style="border:4px outset black; color:white; background-color: gray;">LIBRARY BOOK LOAN FORM</legend>
+   <div class="align">
+       <form name="my_form" action="/action_page.php" onsubmit="return validation()" method="post">
+   NAME: <input type="text" name="name" placeholder="Enter Name"><br><br>
+   ENROLLMENT: <input type="number" name="en_no" placeholder="Enter Enrollment Number" required><br><br>
+   EMAIL-ID: <input type="email" placeholder="Enter Mail" required><br><br>
+   BOOK TITLE: <input type="text" placeholder="Enter Tilte" required><br><br>
+   BOOK BARCODE NUMBER: <input type="number" placeholder="Enter Barcode" required><br><br>
+   DEPARTMENT:
+   <label for="101">
+       <input type="radio" value="AMTICS" id="101" name="dep">AMTICS
+   </label>
+   <label for="102">
+       <input type="radio" value="BMIT" id="102" name="dep">BMIT
+   </label>
+   <label for="103">
+       <input type="radio" value="CGPIT" id="103" name="dep">CGPIT
+   </label>
+   <label for="104">
+       <input type="radio" value="PHARMACY" id="104" name="dep">PHARMACY
+   </label>
+   <label for="105">
+       <input type="radio" value="SRIMCA" id="105" name="dep">SRIMCA
+   </label><br><br>
+   ISSUE DATE: <input type="date"><br><br>
+   RETURN DATE: <input type="date"><br><br>
+   <input type="submit">
+   <input type="reset">
+</div>
+</form>
+</fieldset>
+</body></center>
+</html>
