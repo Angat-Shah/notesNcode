@@ -15,6 +15,10 @@ Originally stored privately, this material is now made public to be useful for o
 - Reference material used for exam preparation  
 - Semester-wise folder structure for easier navigation
 
+> **[Brinjal Dataset](https://drive.google.com/drive/folders/171PqasmI5j-T6Na-I6_ueneLc7BCRk3W?usp=sharing)** - 1000 labeled images of Brinjal Plant's Leaves.
+
+> **[Tulsi Dataset](https://drive.google.com/drive/folders/11WJ1qwy7zIhaV8_aylrgj-SjGZ77mYkU?usp=sharing)** - 250 labeled images of Tulsi Plant's Leaves.
+
 ## Purpose
 
 This repository is not intended to be a comprehensive or official study guide. It is shared as-is, purely as a reference for students who may find it helpful during their own coursework or revision. All files are contributed from personal study efforts and project work.
