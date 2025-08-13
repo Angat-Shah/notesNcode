@@ -1,0 +1,2 @@
+const trustpilot_trustbox_settings = {"trustboxes":[],"activeTrustbox":0,"pageUrls":{"landing":"https://mock-up-trial.myshopify.com","category":"https://mock-up-trial.myshopify.com/collections/cinta","product":"https://mock-up-trial.myshopify.com/products/18ct-yellow-gold-and-diamond-iqra-necklace-with-citrine"}};
+dispatchEvent(new CustomEvent('trustpilotTrustboxSettingsLoaded'));
