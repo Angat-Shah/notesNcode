@@ -1,36 +1,39 @@
 # notesNcode — Personal CSE Curriculum Archive
 
-> [!TIP]
-> If you have relevant academic material or practical resources worth sharing, you’re welcome to contribute to this repository.
+> [!IMPORTANT]
+> This repository is a permanent archive of technical and academic documentation. Contributions that uphold rigor and clarity are encouraged.
 
-**notesNcode** is a structured collection of academic and practical resources compiled over the course of my B.Tech in Computer Science and Engineering. It includes handwritten notes, lab programs, reference material and exam content — all organized semester-wise and shared for easy access and future reference.
+notesNcode is a systematically structured archive of academic and technical assets compiled during a four-year B.Tech in Computer Science and Engineering. What began as a personal methodology for organizing curriculum requirements is now a public-access resource—offering a transparent look at the documentation, logic, and research that define the undergraduate experience.
 
-Originally stored privately, this material is now made public to be useful for others who may need dependable study resources, revision notes or properly organized codebases related to core CSE subjects.
+While these files originated from a personal trajectory, they are shared here to provide a reliable resource for peers and successors navigating the core disciplines of Computer Science.
 
-## Contents
+## Archive Architecture
 
-- Handwritten notes prepared during semesters  
-- Clean, working lab programs with outputs  
-- Assignments and subject-wise reports  
-- Reference material used for exam preparation  
-- Semester-wise folder structure for easier navigation
+- **Chronological structure:** Mirrors the evolution from foundational principles to specialized computational research.
+- **Synthesized documentation:** Comprehensive notes distilled from lectures and scholarly references.
+- **Technical implementations:** Clean, executable laboratory programs with annotated logic and outputs.
+- **Academic portfolio:** Assignments, reports, and theoretical inquiries.
+- **Examination archives:** Curated reference materials and previous-year inquiry papers for longitudinal study.
 
-> **[Brinjal Dataset](https://drive.google.com/drive/folders/171PqasmI5j-T6Na-I6_ueneLc7BCRk3W?usp=sharing)** - 1000 labeled images of Brinjal Plant's Leaves.
+## Proprietary Datasets & Research
 
-> **[Tulsi Dataset](https://drive.google.com/drive/folders/11WJ1qwy7zIhaV8_aylrgj-SjGZ77mYkU?usp=sharing)** - 250 labeled images of Tulsi Plant's Leaves.
+Beyond the standard curriculum, the archive hosts specialized datasets intended for machine learning and botanical research:
 
-## Purpose
+- **Solanum Melongena (Brinjal) Corpus** – 1,000 labeled images for phytopathological classification and leaf phenotyping. [Access dataset](https://drive.google.com/drive/folders/171PqasmI5j-T6Na-I6_ueneLc7BCRk3W?usp=sharing)
+- **Ocimum Tenuiflorum (Tulsi) Dataset** – 250 labeled images for fine-grained botanical categorization. [Access dataset](https://drive.google.com/drive/folders/11WJ1qwy7zIhaV8_aylrgj-SjGZ77mYkU?usp=sharing)
 
-This repository is not intended to be a comprehensive or official study guide. It is shared as-is, purely as a reference for students who may find it helpful during their own coursework or revision. All files are contributed from personal study efforts and project work.
+## Intent & Scope
 
-## Contributions
+This repository is presented as a living retrospective. It is not a prescribed roadmap, but a functional reference. The contents reflect the actual rigor of the B.Tech journey, provided "as-is" to facilitate academic continuity and individual discovery.
 
-If you have similar material — whether handwritten notes, assignment files, lab solutions or reference code — and you believe it could be useful to others, feel free to fork this repository and open a pull request. Submissions will be reviewed and credited appropriately.
+## Collaborative Stewardship
+
+If you have high-quality academic material—handwritten synopses, verified lab solutions, or research datasets—your contributions are welcome. We follow a professional peer-review process to ensure additions maintain the archive's standard of excellence.
+
+Please review [CONTRIBUTING.md](CONTRIBUTING.md) for submission guidelines.
 
 ## License
 
-This project is shared under the [MIT License](LICENSE). You are free to use, adapt and distribute the content, with attribution.
+This project is licensed under the MIT License. You are encouraged to use and adapt these resources with appropriate attribution to the original work.
 
-## Maintained by
-
-**[Angat Shah](https://github.com/Angat-Shah)**
+Curated with intent by **Angat Shah**
