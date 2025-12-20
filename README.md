@@ -19,8 +19,9 @@ While these files originated from a personal trajectory, they are shared here to
 
 Beyond the standard curriculum, the archive hosts specialized datasets intended for machine learning and botanical research:
 
-- **Solanum Melongena (Brinjal) Corpus** – 1,000 labeled images for phytopathological classification and leaf phenotyping. [Access dataset](https://drive.google.com/drive/folders/171PqasmI5j-T6Na-I6_ueneLc7BCRk3W?usp=sharing)
-- **Ocimum Tenuiflorum (Tulsi) Dataset** – 250 labeled images for fine-grained botanical categorization. [Access dataset](https://drive.google.com/drive/folders/11WJ1qwy7zIhaV8_aylrgj-SjGZ77mYkU?usp=sharing)
+> **[Solanum Melongena (Brinjal) Dataset](https://drive.google.com/drive/folders/171PqasmI5j-T6Na-I6_ueneLc7BCRk3W?usp=sharing)** – 1,000 labeled images for phytopathological classification and leaf phenotyping.
+
+> **[Ocimum Tenuiflorum (Tulsi) Dataset](https://drive.google.com/drive/folders/11WJ1qwy7zIhaV8_aylrgj-SjGZ77mYkU?usp=sharing)** – 250 labeled images for fine-grained botanical categorization.
 
 ## Intent & Scope
 
