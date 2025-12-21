@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, BookOpen, Code, FileText, FlaskConical } from "lucide-react";
+import logoImg from "/logo.png";
 
 const floatingIcons = [
   { Icon: BookOpen, x: -180, y: -80, delay: 0 },
@@ -43,7 +44,7 @@ export function Hero() {
           className="mb-6"
         >
           <img
-            src="/logo.png"
+            src={logoImg}
             alt="notesNcode Logo"
             className="h-16 sm:h-20 md:h-24 w-auto mx-auto"
           />
