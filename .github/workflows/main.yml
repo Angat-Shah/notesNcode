@@ -22,15 +22,19 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
+        # Added 'working-directory' so it finds your package.json
+        working-directory: archive-site
         run: npm install
 
       - name: Build
+        working-directory: archive-site
         run: npm run build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/
+          # Updated path to include the subfolder where 'dist' is created
+          path: archive-site/dist/
 
   deploy:
     needs: build_site
