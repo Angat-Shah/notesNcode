@@ -43,7 +43,7 @@ export function Hero() {
           className="mb-6"
         >
           <img
-            src="/logo.png"
+            src={`${import.meta.env.BASE_URL}logo.png`}
             alt="notesNcode Logo"
             className="h-16 sm:h-20 md:h-24 w-auto mx-auto"
           />
