@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, Eye, Clock, FileText, Code, ClipboardList, HelpCircle, FolderOpen, BookOpen } from "lucide-react";
+import { ExternalLink, Eye, Clock, FileText, Code, ClipboardList, HelpCircle, FolderOpen, BookOpen, ShieldCheck } from "lucide-react";
 import { Semester } from "@/data/semesters";
 
 interface SemesterCardProps {
@@ -90,51 +90,63 @@ export function SemesterCard({ semester, onPreview, index }: SemesterCardProps) 
             ))}
           </div>
           
-          {/* Includes list */}
-          <div className="mb-5 py-3 px-4 bg-secondary/40 rounded-xl">
-            <p className="text-xs font-medium text-muted-foreground/70 mb-2 uppercase tracking-wide">
-              Includes
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {includesList.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-1.5 text-muted-foreground">
-                  <Icon className="h-3.5 w-3.5" />
-                  <span className="text-xs">{label}</span>
-                </div>
-              ))}
+          {semester.noShareableContent ? (
+            <div className="mb-4 py-3 px-4 bg-secondary/40 rounded-xl">
+              <div className="flex items-start gap-2.5">
+                <ShieldCheck className="h-4 w-4 text-muted-foreground/70 mt-0.5 shrink-0" />
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Materials are not publicly shared due to the nature of the work. For further details, feel free to get in touch.
+                </p>
+              </div>
             </div>
-          </div>
-          
-          <div className="flex gap-3">
-            <Button
-              variant="default"
-              size="sm"
-              className="rounded-full flex-1 sm:flex-none"
-              asChild
-              disabled={semester.isComingSoon}
-            >
-              <a
-                href={semester.isComingSoon ? "#" : semester.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={semester.isComingSoon ? "pointer-events-none opacity-50" : ""}
-              >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                View on GitHub
-              </a>
-            </Button>
-            
-            <Button
-              variant="outline"
-              size="sm"
-              className="rounded-full flex-1 sm:flex-none border-border/50 hover:bg-secondary hover:text-secondary-foreground"
-              onClick={() => onPreview(semester)}
-              disabled={semester.isComingSoon}
-            >
-              <Eye className="mr-2 h-4 w-4" />
-              Preview
-            </Button>
-          </div>
+          ) : (
+            <>
+              <div className="mb-5 py-3 px-4 bg-secondary/40 rounded-xl">
+                <p className="text-xs font-medium text-muted-foreground/70 mb-2 uppercase tracking-wide">
+                  Includes
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {includesList.map(({ icon: Icon, label }) => (
+                    <div key={label} className="flex items-center gap-1.5 text-muted-foreground">
+                      <Icon className="h-3.5 w-3.5" />
+                      <span className="text-xs">{label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="flex gap-3">
+                <Button
+                  variant="default"
+                  size="sm"
+                  className="rounded-full flex-1 sm:flex-none"
+                  asChild
+                  disabled={semester.isComingSoon}
+                >
+                  <a
+                    href={semester.isComingSoon ? "#" : semester.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={semester.isComingSoon ? "pointer-events-none opacity-50" : ""}
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    View on GitHub
+                  </a>
+                </Button>
+                
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="rounded-full flex-1 sm:flex-none border-border/50 hover:bg-secondary hover:text-secondary-foreground"
+                  onClick={() => onPreview(semester)}
+                  disabled={semester.isComingSoon}
+                >
+                  <Eye className="mr-2 h-4 w-4" />
+                  Preview
+                </Button>
+              </div>
+            </>
+          )}
         </CardContent>
       </Card>
     </motion.div>

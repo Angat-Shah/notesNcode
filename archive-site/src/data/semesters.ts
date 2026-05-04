@@ -14,6 +14,7 @@ export interface Semester {
   githubUrl: string;
   previewUrl?: string;
   isComingSoon?: boolean;
+  noShareableContent?: boolean;
   subjects: string[];
   content?: SemesterContent;
 }
@@ -226,9 +227,10 @@ export const semesters: Semester[] = [
   {
     id: 8,
     title: "Semester 8",
-    description: "The culmination of the degree, focused on industry immersion, project delivery, and final technical synthesis. Note: In development for archival.",
+    description: "Focused entirely on industry project work — internship report, presentation, and final external viva.",
     githubUrl: `${BASE_GITHUB_URL}/tree/main/SEMESTER%20-%208`,
-    isComingSoon: true,
+    isComingSoon: false,
+    noShareableContent: true,
     subjects: ["Project Work"],
   },
 ];
